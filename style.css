@@ -1,0 +1,478 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  z-index: 1;
+  overflow-x: hidden;
+}
+html{
+  scroll-behavior: smooth;
+} 
+ .fixed-nav{
+  position: fixed;
+  width: 100%;
+  background: whitesmoke;
+  box-shadow: 6px 6px 6px black;
+  transition: .5s ease-in-out;  
+  z-index: 1000;
+ }
+ .fixed-nav .links a {
+  color: black;
+}
+
+.fixed-nav .links a:hover {
+  color: aquamarine;
+}
+.nav-center{
+  padding: .5rem .5rem 0;
+}
+.nav-header{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-toggle{
+  background:transparent;
+  border: transparent;
+  right: 3%;
+  position: absolute;
+  font-size: 1.5rem;
+  transition: .5s ease-in-out;
+  visibility: hidden;
+  display: none; 
+}
+.nav-toggle:hover{
+  color: aqua;
+}
+.logo{
+  height: 10vh;
+}
+.links{
+  list-style-type: none;
+}
+li a{
+  text-decoration: none;
+  color: azure;
+  letter-spacing: .2em;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  transition: .5s ease-in;
+}
+li a:hover{
+  color: aquamarine;
+}
+li{
+  padding-right: 20px;
+}
+.links-container{
+  height: auto;
+  overflow: visible;
+}
+.links{
+display: flex;
+position:absolute;
+right: 0;
+top: 15;
+}
+header{
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url(./hero-bcg.jpeg) center/cover no-repeat;
+    min-height: 100vh;
+}
+.banner{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center; 
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.banner h1 {
+  color: azure;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  font-size: 3rem;
+}
+.banner p {
+  color: azure;
+  width: auto;
+  margin: 0 auto;
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+.container .btn{
+  color: azure;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  border:1px azure solid;
+}
+.container .btn:hover{
+  background: azure;
+  color: black;
+}
+.section{
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+#about,#tours{
+  background-color: aliceblue;
+}
+span{
+  color: turquoise;
+}
+.footer{
+  height: 40vh;
+  letter-spacing: .3rem;
+  text-align: center;
+  place-items: center;
+  display: grid;
+  background-color: darkcyan;
+  color: azure;
+  text-transform: capitalize;
+}
+.top-link{
+  color:azure;
+}
+.arrow{
+  position: fixed;
+  /* left: 90%; */
+  right: 10;
+  bottom: 15%;
+  animation: bounce 2s ease-in-out infinite;
+  font-size: 1.25rem;
+  background: aquamarine;
+  padding: .5rem;
+  border-radius: 10px;
+  visibility: hidden;
+  z-index: -100;
+}
+.show-links{
+  visibility: visible;
+  z-index: 100;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.photo{
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  margin: auto;
+}
+.image-container{
+  position: relative;
+  display: inline-block;
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+.col-md-4.col-6 {
+  display: flex;
+  justify-content: center;
+  
+}
+.flip-card{
+  width: 350px;
+  height: 200px;
+  perspective: 1000px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px 10px black;
+  border-radius: 10px;
+}
+.flip-card-inner{
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
+.flip-card:hover .flip-card-inner{
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,.flip-card-back{
+  position: absolute;
+  backface-visibility: hidden;
+}
+.flip-card-back{
+  background:linear-gradient(to right bottom, rgb(236, 221, 8),rgba(255, 0, 13, 0.966),rgb(11, 243, 224));
+  color: rgb(26, 233, 240);
+  width: 100%;
+  height: 210px;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+.image-container h3{
+  position: absolute;
+  top: 120;
+  left: 20;
+  color: azure;
+  text-shadow: 6px 6px 2px black;
+}
+.spots{
+  text-align: left;
+  list-style-image: url('images/icons8-tick-16.png');
+}
+.spots{
+  letter-spacing: .3rem;
+  font-size: 18px;
+}
+.spots li{
+  transition: 1s;
+  position: relative;
+}
+.spots li::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height:1px;
+  width: 0;
+  background-color: #000;
+  transition: .5s;
+}
+.spots li:hover::after{
+  width: 60%;
+}
+@media only screen and (max-width: 540px) {
+  .nav-toggle {
+    visibility: visible;
+    display: inline-block;
+  }
+  .links-container{
+    height: 0;
+    overflow: hidden;
+    transition: .7s ease-in-out;
+  }
+  .links{
+    flex-direction: column;
+    left: 0;
+    top: auto;
+  }
+  }
+  @media only screen and (min-width: 540px) {
+    .links-container {
+        height: auto !important;
+        opacity: 1 !important;
+        overflow: visible;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.col-md-4.col-6 {
+  flex: 1 1 30%; 
+  max-width: 30%;
+}
+@media only screen and (max-width: 1024px) {
+  .col-md-4.col-6 {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .col-md-4.col-6 {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+  #about {
+    padding: 20px;
+  }
+
+  .guides h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .guides p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .us {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .cards {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .cards h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .cards p {
+    font-size: 0.9rem;
+  }
+  
+}
+.container, .row{
+  max-width: 100%;
+}
+.section .guides{
+  max-width: 800px;
+}
+.guides p{
+  font-size: .8rem;
+}
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.us{
+  display: flex;
+}
+.cards .icon {
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+  left: 5;
+  top: -10;
+background:aliceblue;
+width: 55px;
+border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.cards .icon::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left:0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: blue; 
+  transition: 0.5s;
+  z-index: -1; 
+}
+
+.cards:hover .icon::before {
+  height: 100%; 
+}
+.cards{
+  padding: 10px;
+  margin: 10px;
+  width:250px;
+  border: solid;
+  background: white;
+  border-radius: 14px;
+  border-width: 0;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+.cards:hover{
+  transform: scale(1.05);
+  background: #222;
+  color: azure;
+}
+
+/* Initial state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+/* Active state */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#services .timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-left: 40px; 
+}
+
+#services .timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background-color: #007bff;
+}
+
+#services .timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#services .timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+#services .timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  border: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007bff;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+#services .timeline-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-left: 60px;
+  text-align: left;
+}
+#services .timeline-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+#services .timeline-content p {
+  font-size: 1rem;
+  color: #666;
+}
